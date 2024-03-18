@@ -18,6 +18,7 @@ console.log(parent); //object
 
 // JSX - HTML like or XML like syntax
 
+// JSX ==> React.createElement ==> ReactElement - JS Object ==>HTMLElement(on render)
 const jsxHeading =  <h1 id="heading">Namaste React using JSX</h1> 
 
 console.log(jsxHeading);
