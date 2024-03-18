@@ -1,4 +1,9 @@
+import React from 'react'
+import ReactDOM from'react-dom/client'
+
+
 // nested html structure
+// React.createElement ==> Object  ==>HTMLElement(on render)
 const parent = React.createElement(
   "div",
   { id: "parent" },
@@ -10,5 +15,13 @@ const parent = React.createElement(
 );
 
 console.log(parent); //object
+
+// JSX - HTML like or XML like syntax
+
+const jsxHeading =  <h1 id="heading">Namaste React using JSX</h1> 
+
+console.log(jsxHeading);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+console.log("object root: ",root);
+root.render(jsxHeading);
