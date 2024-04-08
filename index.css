@@ -1,3 +1,118 @@
-h1{
-    color:blue
-}
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+    font-size: 16px; /* Adjust base font-size if everything feels too big */
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem; /* Use rem for scalable spacing */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    width: 80px; /* Slightly smaller logo */
+    height: auto;
+  }
+  
+  .nav-items ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-items li {
+    padding: 0.5rem 1rem; /* Reduced padding */
+    margin: 0 0.5rem; /* Reduced margin */
+    color: #333333;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-items li:hover {
+    color: #007bff;
+  }
+  
+  /* Search bar */
+  .search {
+    padding: 0.5rem 1rem;
+    margin: 1rem 2rem; /* Increase margin for more space */
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+  
+  /* Restaurant cards */
+  .res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+  
+  .res-card {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 1rem;
+    width: calc(33.333% - 2rem); /* Adjust width for more space */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .res-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .res-logo {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #eeeeee;
+  }
+  
+  /* Media queries for responsive adjustments */
+  @media (max-width: 960px) {
+    .res-card {
+      width: calc(50% - 2rem); /* Adjust for two cards per row */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .res-card {
+      width: calc(100% - 2rem); /* Adjust for a single card per row */
+    }
+  
+    .nav-items ul {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+  
+    .nav-items li {
+      margin: 0.5rem 0;
+    }
+  }
+  
