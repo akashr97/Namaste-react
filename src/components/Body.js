@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -34,6 +35,13 @@ const Body = () => {
     );
   };
 
+  const onlineStatus =  useOnlineStatus()
+if(onlineStatus === false){
+  return <h1>Looks like you are offline!! Please check your internet connection</h1>
+}
+
+
+
   console.log("body rendered");
   //Conditional Rendering
   // if(listofRestaurants.length === 0) {
@@ -60,6 +68,7 @@ const Body = () => {
               const filteredList = listofRestaurants.filter((res) =>
                 res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
               );
+              console.log("search list: " + filteredList);
               setFilteredRestaurants(filteredList); //updated with the filtered list
             }}
           >
@@ -74,7 +83,8 @@ const Body = () => {
             const filteredList = listofRestaurants.filter(
               (res) => res.info?.avgRating > 4.6
             );
-            setListofRestaurants(filteredList);
+            console.log("filtered list: " + filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top Rated Restaurants
